@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+#require 'database_cleaner'
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
 # order to ease the transition to Capybara we set the default here. If you'd
@@ -33,7 +34,7 @@ ActionController::Base.allow_rescue = false
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
   DatabaseCleaner.strategy = :truncation
-  DatbaseCleaner.orm = "mongoid"
+  DatabaseCleaner.orm = "mongoid"
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end

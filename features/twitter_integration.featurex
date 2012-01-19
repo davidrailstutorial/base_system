@@ -1,0 +1,10 @@
+Feature: Twitter Integration
+ As a customer
+ I want to post a tweet about a company on twitter
+ In order to have my compliants head
+
+ #Comment: Customer sends a direct message on Twitter to a company
+ #Comment: Customer makes a directed tweet about a company on Twitter 
+ #Comment: Company responds to a direct message
+ #Comment: Company responds to a directed tweet
+
