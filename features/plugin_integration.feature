@@ -1,0 +1,36 @@
+Feature: Plugin Integration
+ As a customer
+ I want to contact a company using their contact form online
+ In order to have my compliants head
+
+ Background: Customer sends a message through the plugin on a companies website 
+  Scenario: Customer submits a contact form successfully
+  Given I am on an a contact form
+  When I fill "name" with "David Osei", "email" with "da2nana@gmail.com" and "message" with "hello"
+  Then I should see "Thank you for the message"
+
+  Scenario: No name provided
+  Given I am on an a contact form
+  When I fill "name" with " ", "email" with "da2nana@gmail.com" and "message" with "hello"
+  Then I should see "Please provide your full name"
+
+  Scenario: No email provided
+  Given I am on an a contact form
+  When I fill "name" with "David Osei", "email" with " " and "message" with "hello"
+  Then I should see "Please provide your email address"
+
+  Scenario: No message provided
+  Given I am on an a contact form
+  When I fill "name" with "David Osei", "email" with "da2nana@gmail.com" and "message" with " "
+  Then I should see "Please provide as with your message"
+
+  Scenario: all invalid inputs
+  Given I am on an a contact form
+  When I fill "name" with " ", "email" with " " and "message" with " "
+  Then I should see "Please fill all the forms fields"
+
+ Background: Company receives message from a customer from the plugin
+   Scenario: Company receives message from a plugin
+   Given I am on a Message page
+   Then I should see "1 Message received from plugin"
+  
